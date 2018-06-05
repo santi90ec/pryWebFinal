@@ -1,0 +1,57 @@
+﻿@model IEnumerable<pryWeb.Models.Factura>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.totalFactura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cliente.nombreCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descuetnos.nombreDescuento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrdenCompra.idOrden)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.totalFactura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cliente.nombreCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descuetnos.nombreDescuento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrdenCompra.idOrden)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idFactura }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idFactura }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idFactura })
+        </td>
+    </tr>
+}
+
+</table>

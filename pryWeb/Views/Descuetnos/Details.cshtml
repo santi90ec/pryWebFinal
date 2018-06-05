@@ -1,0 +1,34 @@
+﻿@model pryWeb.Models.Descuetnos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Descuetnos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombreDescuento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreDescuento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.porcentajeDecuento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.porcentajeDecuento)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idDescuento }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

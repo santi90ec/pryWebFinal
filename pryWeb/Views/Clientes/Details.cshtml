@@ -1,0 +1,42 @@
+﻿@model pryWeb.Models.Cliente
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombreCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.direccionCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.direccionCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contactoCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contactoCliente)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idCliente }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

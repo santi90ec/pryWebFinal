@@ -1,0 +1,51 @@
+﻿@model IEnumerable<pryWeb.Models.OrdenCompra>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cantidadProducto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubtotalPoducto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descuetnos.nombreDescuento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Producto.NombreProduct)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cantidadProducto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubtotalPoducto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descuetnos.nombreDescuento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Producto.NombreProduct)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idOrden }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idOrden }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idOrden })
+        </td>
+    </tr>
+}
+
+</table>

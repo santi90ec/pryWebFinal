@@ -1,0 +1,58 @@
+﻿@model pryWeb.Models.Factura
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Factura</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.totalFactura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.totalFactura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.nombreCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.nombreCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descuetnos.nombreDescuento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descuetnos.nombreDescuento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrdenCompra.idOrden)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrdenCompra.idOrden)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idFactura }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
